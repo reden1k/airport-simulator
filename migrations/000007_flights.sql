@@ -7,6 +7,7 @@ CREATE TABLE flights (
     airline_id INT NOT NULL REFERENCES airlines(id),
     airplane_id INT NOT NULL REFERENCES airplanes(id),
     status VARCHAR(20) NOT NULL CHECK (status IN ('scheduled', 'boarding', 'departed', 'landed', 'cancelled', 'delayed')),
+    UNIQUE(airplane_id, departure_time),
     created_at TIMESTAMP DEFAULT NOW(),
     updated_at TIMESTAMP DEFAULT NOW()
 )

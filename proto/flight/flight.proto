@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package flight;
+
+option go_package = "airport-simulator/proto/flight"
+
+
+message GetFlightRequest {
+  int32 flight_id = 1;
+}
+
+message FlightResponse {
+  int32 id = 1;
+  repeated string available_seats = 2;
+  google.protobuf.Timestamp departure_time = 3;
+  google.protobuf.Timestamp arrival_time = 4;
+  string status = 5;
+}
+
+service FlightService {
+  rpc GetFlight(GetFlightRequest) returns (FlightResponse);
+}
