@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package flight;
 
-option go_package = "airport-simulator/proto/flight"
+option go_package = "airport-simulator/proto/flight";
 
 
 message GetFlightRequest {

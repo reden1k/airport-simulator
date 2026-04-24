@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package booking;
 
-option go_package = "airport-simulator/proto/booking"
+option go_package = "airport-simulator/proto/booking";
 
 
 message BookingRequest {
